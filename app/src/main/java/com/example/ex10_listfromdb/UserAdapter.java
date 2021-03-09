@@ -48,6 +48,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return 0;
     }
 
+    public void setData(List<User> users) {
+        this.users.clear();
+        this.users.addAll(users);
+    }
+
     public class UserViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView nameTv;

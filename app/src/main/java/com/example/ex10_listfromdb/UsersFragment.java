@@ -9,20 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UsersFragment extends Fragment {
 
 
     public static final String TAG = UsersFragment.class.getSimpleName();
-    private List<User> mUsers;
     private UserAdapter mUserAdapter;
 
-    public static UsersFragment newInstance(){
+    public static UsersFragment newInstance() {
         UsersFragment usersFragment = new UsersFragment();
         return usersFragment;
     }
@@ -37,23 +36,19 @@ public class UsersFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        UsersViewModel usersViewModel = new ViewModelProvider(this).get(UsersViewModel.class);
 
-        if (getActivity() != null) {
-            UserRepository userRepository = new UserRepository(getActivity().getApplication());
-            userRepository.getAllUsers().observe(this, new Observer<List<User>>() {
-                @Override
-                public void onChanged(List<User> users) {
-                    if (mUserAdapter == null) {
-                        mUsers = users;
-                        mUserAdapter = initAdapter(view, mUsers);
-                    } else {
-                        mUsers.clear();
-                        mUsers.addAll(users);
-                        mUserAdapter.notifyDataSetChanged();
-                    }
+        usersViewModel.getAllUsers().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                if (mUserAdapter == null) {
+                    mUserAdapter = initAdapter(view, users);
+                } else {
+                    mUserAdapter.setData(users);
+                    mUserAdapter.notifyDataSetChanged();
                 }
-            });
-        }
+            }
+        });
     }
 
     private UserAdapter initAdapter(@NonNull View view, List<User> users) {

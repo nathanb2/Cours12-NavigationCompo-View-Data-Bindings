@@ -22,4 +22,12 @@ public class UserRepository {
     public LiveData<List<User>> getAllUsers(){
         return userDao.getAllUsers();
     }
+
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
+
+    public void removeUser(User user) {
+        userDao.removeUser(user);
+    }
 }

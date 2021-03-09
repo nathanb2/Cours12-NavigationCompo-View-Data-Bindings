@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUsersFragment() {
-        UsersFragment usersFragment = new UsersFragment();
+        UsersFragment usersFragment = UsersFragment.newInstance();
         getSupportFragmentManager().beginTransaction().add(R.id.AM_container, usersFragment, UsersFragment.TAG).commit();
     }
 

@@ -56,9 +56,12 @@ public class UsersFragment extends Fragment {
             public void onChanged(List<User> users) {
                 if (mUserAdapter == null){
                     mUserAdapter = initAdapter(users);
-                    binding.recyclerView.scrollToPosition(usersViewModel.getAdapterPosition());
+                    //on fait scrolle automatiqueemnt notre recyclerView jusqu'a la position visible avant la rotation
+                    binding.recyclerView.scrollToPosition(usersViewModel.getRecyclerViewVisiblePosition());
                 }else {
+                    //on actualise notre liste (juste le contenu de la liste)
                     mUserAdapter.setData(users);
+                    //et disons a l'adapter de se rafraichir pour afficher d'eventuels changements
                     mUserAdapter.notifyDataSetChanged();
                 }
             }
@@ -67,7 +70,9 @@ public class UsersFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        usersViewModel.setAdapterPosition(((LinearLayoutManager)binding.recyclerView.getLayoutManager()).findFirstVisibleItemPosition());
+        //avant la destructionde la vue on garde la position de la liste visible dans notre viewModel
+        usersViewModel.setRecyclerViewVisiblePosition(((LinearLayoutManager)binding.recyclerView.getLayoutManager()).findFirstVisibleItemPosition());
+        mUserAdapter = null;
         super.onDestroyView();
     }
 

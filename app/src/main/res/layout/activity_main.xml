@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    acceuil le main_navigation et l'affichage de ses fragments
+ defaultNavHost indique que le navigatoin et donc son premier fragment doit etre lance automatiquement a la creationd e l'activity-->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_main_nav_host"
         android:layout_width="match_parent"

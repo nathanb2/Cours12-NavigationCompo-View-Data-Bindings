@@ -2,39 +2,53 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <variable name="user" type="com.example.ex10_listfromdb.User"/>
+
+        <variable
+            name="user"
+            type="com.example.ex10_listfromdb.User" />
+
+        <import type="com.example.ex10_listfromdb.R" />
+
+        <import type="androidx.navigation.Navigation" />
+        <!-- assuming that com.example.MyGeneratedNavigation was
+             generated from .../res/navigation/my_navigation.xml -->
+        <variable
+            name="myNavigation"
+            type="Integer" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@{user.age >= 18 ? @color/design_default_color_error : @color/white}"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="5dp">
 
-        <TextView
+        <Button
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="@{user.name != null ? true : false}"
             android:gravity="center_vertical"
             android:text="@{user.name}"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="150dp"/>
+            android:layout_height="150dp" />
 
-        <TextView
+        <Button
             android:id="@+id/age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:clickable="@{user.age > -1 ? true : false}"
             android:gravity="center_vertical"
-            android:textColor="@color/black"
             android:text="@{String.valueOf(user.age)}"
+            android:onClick="@{view -> Navigation.findNavController(view).navigate(R.id.action_userDetailsFragment_to_ageFragment)}"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
     </LinearLayout>

@@ -10,7 +10,10 @@ import java.util.concurrent.Executor;
 public class UsersViewModel extends ViewModel {
     private final Executor mExecutor;
     private UserRepository mRepository;
-    private int adapterPosition;
+    //permet de garder la position visible de la liste de users lors de la rotation
+    //le fragment est detruit et recree avec une nouvelle instance mais l'instance du viewModel recupere est la emem donc on y garde la valeur la position visible de la recyclerView
+    //ainsi on peut a la reouverture du fragment lui dir de scrolle automatiquement jusqu'a la derniere position visile et non de ramener l'utilisateur en haut de la liste
+    private int recyclerViewVisiblePosition;
 
     public UsersViewModel(UserRepository userRepository, Executor executor) {
         mRepository = userRepository;
@@ -33,11 +36,11 @@ public class UsersViewModel extends ViewModel {
         mExecutor.execute(() -> mRepository.updateUser(user));
     }
 
-    public void setAdapterPosition(int adapterPosition) {
-        this.adapterPosition = adapterPosition;
+    public void setRecyclerViewVisiblePosition(int recyclerViewVisiblePosition) {
+        this.recyclerViewVisiblePosition = recyclerViewVisiblePosition;
     }
 
-    public int getAdapterPosition() {
-        return adapterPosition;
+    public int getRecyclerViewVisiblePosition() {
+        return recyclerViewVisiblePosition;
     }
 }

@@ -3,6 +3,7 @@ package com.example.ex10_listfromdb.injection;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.ex10_listfromdb.UserDetailsViewModel;
 import com.example.ex10_listfromdb.UserRepository;
 import com.example.ex10_listfromdb.UsersViewModel;
 
@@ -26,6 +27,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         this.executor = executor;
     }
 
+
+
     /**
      * Permet de creer les instances de viewModels
      * @param modelClass Type de l'instance du viewModel a creer
@@ -36,6 +39,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(Class<T> modelClass) {
         if (modelClass.isAssignableFrom(UsersViewModel.class)) {
             return (T) new UsersViewModel(userRepository, executor);
+        }
+        if (modelClass.isAssignableFrom(UserDetailsViewModel.class)) {
+            return (T) new UserDetailsViewModel(userRepository);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }

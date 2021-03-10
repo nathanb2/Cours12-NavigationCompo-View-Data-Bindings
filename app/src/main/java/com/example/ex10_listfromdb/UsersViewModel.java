@@ -10,6 +10,7 @@ import java.util.concurrent.Executor;
 public class UsersViewModel extends ViewModel {
     private final Executor mExecutor;
     private UserRepository mRepository;
+    private int adapterPosition;
 
     public UsersViewModel(UserRepository userRepository, Executor executor) {
         mRepository = userRepository;
@@ -30,5 +31,13 @@ public class UsersViewModel extends ViewModel {
 
     public void updateUser(User user) {
         mExecutor.execute(() -> mRepository.updateUser(user));
+    }
+
+    public void setAdapterPosition(int adapterPosition) {
+        this.adapterPosition = adapterPosition;
+    }
+
+    public int getAdapterPosition() {
+        return adapterPosition;
     }
 }

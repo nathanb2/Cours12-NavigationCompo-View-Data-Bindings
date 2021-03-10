@@ -24,4 +24,6 @@ public interface UserDao {
     @Delete
     void removeUser(User user);
 
+    @Query("SELECT * FROM user where id = :id")
+    LiveData<User> getUserById(long id);
 }

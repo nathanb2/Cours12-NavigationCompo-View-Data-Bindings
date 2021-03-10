@@ -29,4 +29,8 @@ public class UserRepository {
     public void removeUser(User user) {
         userDao.removeUser(user);
     }
+
+    public LiveData<User> getUserById(long id) {
+        return userDao.getUserById(id);
+    }
 }

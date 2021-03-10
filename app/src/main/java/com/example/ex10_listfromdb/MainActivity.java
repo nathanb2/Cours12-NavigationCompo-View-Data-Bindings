@@ -4,16 +4,19 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ex10_listfromdb.databinding.ActivityMainBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 
 public class MainActivity extends AppCompatActivity {
 
     private int counter;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = com.example.ex10_listfromdb.databinding.ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         initUsersFragment();
 

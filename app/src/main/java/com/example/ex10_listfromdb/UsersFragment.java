@@ -1,9 +1,6 @@
 package com.example.ex10_listfromdb;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ex10_listfromdb.databinding.FragmentUsersBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 import com.example.ex10_listfromdb.injection.ViewModelFactory;
 
@@ -26,6 +23,7 @@ public class UsersFragment extends Fragment {
 
     public static final String TAG = UsersFragment.class.getSimpleName();
     private UserAdapter mUserAdapter;
+    private FragmentUsersBinding binding;
 
     public static UsersFragment newInstance() {
         UsersFragment usersFragment = new UsersFragment();
@@ -35,7 +33,8 @@ public class UsersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_users, container, false);
+        binding = FragmentUsersBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -59,10 +58,9 @@ public class UsersFragment extends Fragment {
     }
 
     private UserAdapter initAdapter(@NonNull View view, List<User> users) {
-        RecyclerView recyclerView = view.findViewById(R.id.FU_rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         UserAdapter userAdapter = new UserAdapter(users);
-        recyclerView.setAdapter(userAdapter);
+        binding.recyclerView.setAdapter(userAdapter);
         return userAdapter;
     }
 }

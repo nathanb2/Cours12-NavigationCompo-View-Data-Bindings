@@ -10,9 +10,8 @@ public class UserRepository {
 
     UserDao userDao;
 
-    public UserRepository(Application application){
-        DataBase dataBase = DataBase.getDatabase(application);
-        userDao = dataBase.userDao();
+    public UserRepository(UserDao userDao){
+        this.userDao = userDao;
     }
 
     public void createUser(User user){

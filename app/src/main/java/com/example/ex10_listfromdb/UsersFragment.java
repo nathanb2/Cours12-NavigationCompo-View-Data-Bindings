@@ -1,6 +1,9 @@
 package com.example.ex10_listfromdb;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ex10_listfromdb.injection.Injection;
+import com.example.ex10_listfromdb.injection.ViewModelFactory;
 
 import java.util.List;
 
@@ -36,7 +42,8 @@ public class UsersFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        UsersViewModel usersViewModel = new ViewModelProvider(this).get(UsersViewModel.class);
+        ViewModelFactory viewModelFactory = Injection.provideViewModelFactory(getContext());
+        UsersViewModel usersViewModel = viewModelFactory.create(UsersViewModel.class);
 
         usersViewModel.getAllUsers().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
             @Override

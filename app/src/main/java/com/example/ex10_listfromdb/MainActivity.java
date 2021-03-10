@@ -1,9 +1,10 @@
 package com.example.ex10_listfromdb;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.view.View;
+import com.example.ex10_listfromdb.injection.Injection;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +17,10 @@ public class MainActivity extends AppCompatActivity {
 
         initUsersFragment();
 
-        UserRepository userRepository = new UserRepository(getApplication());
+        UserRepository userRepository = Injection.provideUserRepository(this);
         findViewById(R.id.AM_add_btn).setOnClickListener(view -> {
-            userRepository.createUser(new User("User " + ++counter, 10 + counter));
+            Injection.provideExecutor().execute(() ->
+                    userRepository.createUser(new User("User " + ++counter, 10 + counter)));
         });
     }
 

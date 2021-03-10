@@ -1,20 +1,19 @@
 package com.example.ex10_listfromdb;
 
 
-import android.app.Application;
-
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 
 import java.util.List;
+import java.util.concurrent.Executor;
 
-public class UsersViewModel extends AndroidViewModel {
+public class UsersViewModel extends ViewModel {
+    private final Executor mExecutor;
     private UserRepository mRepository;
 
-    // Initialize the repository and the list of users
-    public UsersViewModel(Application application) {
-        super(application);
-        mRepository = new UserRepository(application);
+    public UsersViewModel(UserRepository userRepository, Executor executor) {
+        mRepository = userRepository;
+        mExecutor = executor;
     }
 
     public LiveData<List<User>> getAllUsers() {
@@ -22,13 +21,14 @@ public class UsersViewModel extends AndroidViewModel {
     }
 
     public void createUser(User user) {
-        mRepository.createUser(user);
+        mExecutor.execute(() -> mRepository.createUser(user));
     }
+
     public void removeUser(User user) {
-        mRepository.removeUser(user);
+        mExecutor.execute(() -> mRepository.removeUser(user));
     }
 
     public void updateUser(User user) {
-        mRepository.updateUser(user);
+        mExecutor.execute(() -> mRepository.updateUser(user));
     }
 }

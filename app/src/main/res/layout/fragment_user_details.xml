@@ -8,10 +8,7 @@
             type="com.example.ex10_listfromdb.User" />
 
         <import type="com.example.ex10_listfromdb.R" />
-
         <import type="androidx.navigation.Navigation" />
-        <!-- assuming that com.example.MyGeneratedNavigation was
-             generated from .../res/navigation/my_navigation.xml -->
         <variable
             name="myNavigation"
             type="Integer" />

@@ -25,3 +25,8 @@ Binding: Permet de generer une class NomDuLayoutBinding
 - On peut utiliser des conditions simples
 - On peut ecrire directement la fonction (en lambda) a realiser au click par exemple (utile pour appeler une fonction de navigation de notre shema de navigation par exemple)
 - https://developer.android.com/topic/libraries/data-binding
+
+
+ViewModel scope:
+-Dans UsersFragment on passe au viewModelProvider this cela definit que le view model de la meme instance pour ce fragment meme si l'instance du fragment change (exemple de la rotation)
+-Dans UserDetailsFragment et AgeFragment on passe getActivity() (et on demande dans ces 2 fragment un viewModel du meem type soit UserDetailsViewModel) donc le scope du viewmodel est l'activity et ces 2 fragments "vivant sur la emem activity" ils recuperent la mem instance de viewModel et par exemple AgeFragment peut afficher l'age du user garder en variable dasn le viewModel et qui y a etait insere par userDetailsFragment lorsqu'il l'avait observe avec le live data retourne par getAllUsers

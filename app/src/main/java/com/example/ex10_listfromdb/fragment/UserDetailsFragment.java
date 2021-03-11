@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.fragment;
 
 import android.os.Bundle;
 
@@ -7,16 +7,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ex10_listfromdb.model.User;
 import com.example.ex10_listfromdb.databinding.FragmentUserDetailsBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 import com.example.ex10_listfromdb.injection.ViewModelFactory;
+import com.example.ex10_listfromdb.view_model.UserDetailsViewModel;
 
 public class UserDetailsFragment extends Fragment {
 

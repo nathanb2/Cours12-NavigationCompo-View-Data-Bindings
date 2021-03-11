@@ -1,7 +1,10 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.view_model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.ex10_listfromdb.model.User;
+import com.example.ex10_listfromdb.repository.UserRepository;
 
 
 public class UserDetailsViewModel extends ViewModel {

@@ -3,7 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 <!--    permet d'indiquer le nom et le type des variables que l'on souhaite afficher directement dasn nos vue grace au dataBinding-->
     <data>
-        <variable name="user" type="com.example.ex10_listfromdb.User"/>
+        <variable name="user" type="com.example.ex10_listfromdb.model.User"/>
     </data>
 <!--    on peut ecrire des conditions et donc donner selon la valeur de age telle ou telle couleur de background-->
     <LinearLayout

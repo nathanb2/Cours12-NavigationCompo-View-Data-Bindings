@@ -1,11 +1,10 @@
 package com.example.ex10_listfromdb.injection;
 
-import android.app.Application;
 import android.content.Context;
 
 
-import com.example.ex10_listfromdb.DataBase;
-import com.example.ex10_listfromdb.UserRepository;
+import com.example.ex10_listfromdb.database.DataBase;
+import com.example.ex10_listfromdb.repository.UserRepository;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

@@ -1,13 +1,12 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.NavGraph;
-import androidx.navigation.NavInflater;
-import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.ex10_listfromdb.R;
+import com.example.ex10_listfromdb.model.User;
+import com.example.ex10_listfromdb.repository.UserRepository;
 import com.example.ex10_listfromdb.databinding.ActivityMainBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 

@@ -5,7 +5,7 @@
 
         <variable
             name="user"
-            type="com.example.ex10_listfromdb.User" />
+            type="com.example.ex10_listfromdb.model.User" />
 
         <import type="com.example.ex10_listfromdb.R" />
         <import type="androidx.navigation.Navigation" />

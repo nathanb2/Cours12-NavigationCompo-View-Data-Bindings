@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ex10_listfromdb.model.User;
+import com.example.ex10_listfromdb.adapter.UserAdapter;
+import com.example.ex10_listfromdb.view_model.UsersViewModel;
 import com.example.ex10_listfromdb.databinding.FragmentUsersBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 import com.example.ex10_listfromdb.injection.ViewModelFactory;

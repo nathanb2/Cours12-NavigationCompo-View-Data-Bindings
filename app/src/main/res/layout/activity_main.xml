@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
 <!--    acceuil le main_navigation et l'affichage de ses fragments
  defaultNavHost indique que le navigatoin et donc son premier fragment doit etre lance automatiquement a la creationd e l'activity-->

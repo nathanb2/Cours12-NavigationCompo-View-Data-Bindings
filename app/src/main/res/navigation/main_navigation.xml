@@ -12,7 +12,7 @@ est heberge et ouvert par main activity (voir activity_main.xml)
     <!--    Permet de declarer un fragment comme membre du shema de navigation-->
     <fragment
         android:id="@+id/usersFragment"
-        android:name="com.example.ex10_listfromdb.UsersFragment"
+        android:name="com.example.ex10_listfromdb.fragment.UsersFragment"
         android:label="UsersFragment">
         <!--        Permet de declarer une action de navigation realisable a partir de UsersFragment
         En l'occurence, d'ouvrire UserDetailsFragment-->
@@ -22,7 +22,7 @@ est heberge et ouvert par main activity (voir activity_main.xml)
     </fragment>
     <fragment
         android:id="@+id/userDetailsFragment"
-        android:name="com.example.ex10_listfromdb.UserDetailsFragment"
+        android:name="com.example.ex10_listfromdb.fragment.UserDetailsFragment"
         android:label="fragment_user_details"
         tools:layout="@layout/fragment_user_details">
         <!--        Permet de declarer que UserdetailsFragment attends un long userId en parametre lorsqu'on l'ouvre
@@ -45,7 +45,7 @@ est heberge et ouvert par main activity (voir activity_main.xml)
     </fragment>
     <fragment
         android:id="@+id/nameFragment"
-        android:name="com.example.ex10_listfromdb.NameFragment"
+        android:name="com.example.ex10_listfromdb.fragment.NameFragment"
         android:label="fragment_name"
         tools:layout="@layout/fragment_name">
         <argument
@@ -54,7 +54,7 @@ est heberge et ouvert par main activity (voir activity_main.xml)
     </fragment>
     <fragment
         android:id="@+id/ageFragment"
-        android:name="com.example.ex10_listfromdb.AgeFragment"
+        android:name="com.example.ex10_listfromdb.fragment.AgeFragment"
         android:label="fragment_age"
         tools:layout="@layout/fragment_age" />
 </navigation>

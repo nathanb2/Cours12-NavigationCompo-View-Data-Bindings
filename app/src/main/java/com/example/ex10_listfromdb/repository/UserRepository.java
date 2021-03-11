@@ -1,8 +1,9 @@
-package com.example.ex10_listfromdb;
-
-import android.app.Application;
+package com.example.ex10_listfromdb.repository;
 
 import androidx.lifecycle.LiveData;
+
+import com.example.ex10_listfromdb.dao.UserDao;
+import com.example.ex10_listfromdb.model.User;
 
 import java.util.List;
 

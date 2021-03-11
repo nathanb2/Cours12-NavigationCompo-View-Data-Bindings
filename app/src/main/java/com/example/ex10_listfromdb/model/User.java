@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

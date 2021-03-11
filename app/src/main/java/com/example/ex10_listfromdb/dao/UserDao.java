@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,6 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.ex10_listfromdb.model.User;
 
 import java.util.List;
 

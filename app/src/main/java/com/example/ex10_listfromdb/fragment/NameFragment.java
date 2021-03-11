@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.fragment;
 
 import android.os.Bundle;
 

@@ -3,9 +3,9 @@ package com.example.ex10_listfromdb.injection;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ex10_listfromdb.UserDetailsViewModel;
-import com.example.ex10_listfromdb.UserRepository;
-import com.example.ex10_listfromdb.UsersViewModel;
+import com.example.ex10_listfromdb.view_model.UserDetailsViewModel;
+import com.example.ex10_listfromdb.repository.UserRepository;
+import com.example.ex10_listfromdb.view_model.UsersViewModel;
 
 import java.util.concurrent.Executor;
 

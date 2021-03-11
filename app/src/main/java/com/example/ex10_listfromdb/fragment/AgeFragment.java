@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.fragment;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ex10_listfromdb.view_model.UserDetailsViewModel;
 import com.example.ex10_listfromdb.databinding.FragmentAgeBinding;
 import com.example.ex10_listfromdb.injection.Injection;
 import com.example.ex10_listfromdb.injection.ViewModelFactory;

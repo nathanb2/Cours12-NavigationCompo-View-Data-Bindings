@@ -1,4 +1,4 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,6 +10,9 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.example.ex10_listfromdb.model.User;
+import com.example.ex10_listfromdb.dao.UserDao;
 
 @Database(entities = {User.class}, version = 1)
 public abstract class DataBase extends RoomDatabase {

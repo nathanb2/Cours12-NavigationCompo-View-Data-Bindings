@@ -1,16 +1,15 @@
-package com.example.ex10_listfromdb;
+package com.example.ex10_listfromdb.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ex10_listfromdb.databinding.ItemUserBinding;
+import com.example.ex10_listfromdb.fragment.UsersFragmentDirections;
+import com.example.ex10_listfromdb.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

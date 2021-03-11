@@ -20,7 +20,8 @@ Binding: Permet de generer une class NomDuLayoutBinding
 - ViewBinding: permet d'acceder au vues du layout sans avoir besoin de les recuperer avec findViewById()
 - https://developer.android.com/topic/libraries/view-binding
 
-- DataBinding: Permet d'indiquer au layout xml des variables (et leurs type) qui pouront etre directement utilise dans le xml pour indiquer a une vue par exemple d'afficher la variable
-- On peut utiliser des conditions simple 
+- DataBinding: Permet d'indiquer au layout xml des variables (et leurs type) qui pouront etre directement utilise dans le xml pour indiquer a une vue par exemple d'afficher la variable 
+- Pour passer la valeur de la variable au layyout on utilise la variable binding a qui on fait setLaVariabe(laVariable)
+- On peut utiliser des conditions simples
 - On peut ecrire directement la fonction (en lambda) a realiser au click par exemple (utile pour appeler une fonction de navigation de notre shema de navigation par exemple)
 - https://developer.android.com/topic/libraries/data-binding
